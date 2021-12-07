@@ -7,11 +7,21 @@
     <title>Document</title>
 </head>
 <body>
-
+    <!--https://javascript.info/logical-operators-->
+    <button onclick="myFunction()">Log In</button>
     <script>
-        let txt = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-        let length = txt.length;
-        console.log(length);
+    function myFunction() {
+        
+        let person = prompt("Please enter your name");
+        
+        if (person === "Admin") {
+            password = prompt("Please enter password");
+        }
+        if (password === "The") {
+            alert("Welcome!");
+        }
+        
+        }
     </script>
 </body>
 </html>
