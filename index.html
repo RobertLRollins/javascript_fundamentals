@@ -3,55 +3,72 @@
   <head>
     <meta charset="utf-8">
 
-    <title>Number guessing game</title>
+    <title>DOM</title>
 
-    <style>
-      html {
-        font-family: sans-serif;
-      }
-      body {
-        width: 50%;
-        max-width: 800px;
-        min-width: 480px;
-        margin: 0 auto;
-      }
-      .lastResult {
-        color: white;
-        padding: 3px;
-      }
-    </style>
+    <style></style>
   </head>
 
   <body>
-      <h1>Number guessing game</h1>
+    <h1>
+      THE TITLE OF YOUR WEBPAGE
+    </h1>
+    <div id="container"></div>
 
-      <p>We have selected a random number between 1 and 100. See if you can guess it in 10 turns or less. We'll tell you if your guess was too high or too low.</p>
+    <button id="btn">Click Me Baby!</button>
+  </body>
 
-<div class="form">
-  <label for="guessField">Enter a guess: </label><input type="text" id="guessField" class="guessField">
-  <input type="submit" value="Submit guess" class="guessSubmit">
-</div>
+  <script>
+  
+    const container = document.querySelector('#container');
 
-<div class="resultParas">
-  <p class="guesses"></p>
-  <p class="lastResult"></p>
-  <p class="lowOrHi"></p>
-</div>
+    const content = document.createElement('div');
+    content.classList.add('content');
+    content.textContent = 'This is the glorious text-content!';
+    container.appendChild(content);
 
-</body>
+    const red = document.createElement('p');
+    red.classList.add('red');
+    red.textContent = "Hey I'm Red!";
+    red.style.color = 'red';
+    container.appendChild(red);
 
-<script>
-let sum = 0;
+    const blue = document.createElement('h3');
+    blue.classList.add('blue');
+    blue.textContent = "I'm a blue h3!";
+    blue.style.color = 'blue';
+    container.appendChild(blue);
 
-while (true) {
+    const blackPink = document.createElement('div');
+    blackPink.classList.add('blackPink');
+    blackPink.style.backgroundColor = 'pink';
+    blackPink.style.border = "black 5px";
+    container.appendChild(blackPink);
 
-  let value = +prompt("Enter a number", '');
+    const anotherH1 = document.createElement('h1');
+    anotherH1.classList.add('anotherH1');
+    anotherH1.textContent = "I'm in a div";
+    blackPink.appendChild(anotherH1);
 
-  if (!value) break; // (*)
-
-  sum += value;
-
-}
-alert( 'Sum: ' + sum );
-</script>
+    const crazyP = document.createElement('p');
+    crazyP.classList.add('crazyP');
+    crazyP.textContent = "ME TOO!!!";
+    blackPink.appendChild(crazyP);
+    
+    const btn = document.querySelector('#btn');
+    btn.addEventListener('click', alertFunction);
+    
+    function alertFunction() {
+    alert("YAY! YOU DID IT!");
+    }
+    
+    btn.addEventListener('click', function (e) {
+    console.log(e);
+    });
+    btn.addEventListener('click', function (e) {
+    console.log(e.target);
+    });
+    btn.addEventListener('click', function (e) {
+    e.target.style.background = 'blue';
+    });
+  </script>
 </html>
